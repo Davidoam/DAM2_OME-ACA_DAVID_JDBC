@@ -1,0 +1,31 @@
+PREGUNTA 1
+
+Explica cómo funciona la relación 1:N entre Agencia y Satelite tanto en SQL como en Java.
+
+La relación 1:N entre Agencia y Satelite, en SQL, al tratarse de Postgre una base de datos relacional, hacemos una relación de uno a muchos, Tabla Padre (AGENCIAS): Almacena los datos relevantes de agencia y utiliza una clave primaria id_agencia.
+Tabla Hija (SATELITES): Almacena la lista de satelites. Contiene una clave foránea (id_agencia) vinculada a la tabla padre.
+En Java, al no poder hacer relaciones como en SQL, tenemos que hacer esta relacion de uno a mucho pasando como Objeto private Agencias agencias; 
+
+
+PREGUNTA 2
+
+Explica por qué en Java utilizamos:
+
+private Agencia agencia;
+
+y no:
+
+private int agenciaId;
+
+Hacemos uso de private Agencia agencia porque si bien es cierto que nos podría llegar a servir poner un int y el id de la agencia, no tendríamos los demás datos relevantes de la agencia, que posteriormente nos pueden servir si tratamos con ellos.
+
+
+PREGUNTA 3
+
+Explica qué ventaja aporta PreparedStatement frente a concatenar SQL manualmente.
+
+Tenemos una ventaja real al usar PreparedStatement si lo comparamos con concatenar SQL manualmente porque podemos evitar inyecciones SQL no deseadas, esto lo logramos gracas a las bind (?) que ponemos en lugar de los String correspondientes.
+
+
+
+
